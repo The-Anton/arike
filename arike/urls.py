@@ -13,16 +13,26 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-
+from dashboard.views import dashboard_view
 from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 from django.urls import path
-from dashboard.views import dashboard_view
-from facility.views import GenericFacilityCreateView, GenericFacilityUpdateView, GenericFacilityDetailView, GenericFacilityDeleteView
-from patients.views import GenericPatientCreateView, GenericPatientUpdateView, GenericPatientDetailView, GenericPatientDeleteView
-
+from facility.views import (GenericFacilityCreateView,
+                            GenericFacilityDeleteView,
+                            GenericFacilityDetailView,
+                            GenericFacilityUpdateView)
+from patients.views import (GenericDiseaseHistoryCreateView,
+                            GenericDiseaseHistoryDeleteView,
+                            GenericDiseaseHistoryDetailView,
+                            GenericDiseaseHistoryUpdateView,
+                            GenericFamilyCreateView, GenericFamilyDeleteView,
+                            GenericFamilyDetailView, GenericFamilyUpdateView,
+                            GenericPatientCreateView, GenericPatientDeleteView,
+                            GenericPatientDetailView, GenericPatientUpdateView,
+                            GenericTreatmentCreateView,
+                            GenericTreatmentDeleteView,
+                            GenericTreatmentDetailView,
+                            GenericTreatmentUpdateView)
 from users.views import login_view
 
 urlpatterns = [
@@ -38,5 +48,20 @@ urlpatterns = [
     path("patient-update/<pk>", GenericPatientUpdateView.as_view()),
     path("patient-detail/<pk>", GenericPatientDetailView.as_view()),
     path("patient-delete/<pk>", GenericPatientDeleteView.as_view()),
+
+    path("disease-history-create/", GenericDiseaseHistoryCreateView.as_view()),
+    path("disease-history-update/<pk>", GenericDiseaseHistoryUpdateView.as_view()),
+    path("disease-history-detail/<pk>", GenericDiseaseHistoryDetailView.as_view()),
+    path("disease-history-delete/<pk>", GenericDiseaseHistoryDeleteView.as_view()),
+
+    path("treatment-create/", GenericTreatmentCreateView.as_view()),
+    path("treatment-update/<pk>", GenericTreatmentUpdateView.as_view()),
+    path("treatment-detail/<pk>", GenericTreatmentDetailView.as_view()),
+    path("treatment-delete/<pk>", GenericTreatmentDeleteView.as_view()),
+
+    path("family-create/", GenericFamilyCreateView.as_view()),
+    path("family-update/<pk>", GenericFamilyUpdateView.as_view()),
+    path("family-detail/<pk>", GenericFamilyDetailView.as_view()),
+    path("family-delete/<pk>", GenericFamilyDeleteView.as_view()),
 
 ]
