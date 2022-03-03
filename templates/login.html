@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block page %}
+
+<div class="relative bg-white" style="width: 1280px; height: 720px;">
+    <div class="inline-flex flex-col items-start justify-end py-64 pl-36 pr-48 absolute left-0 top-0 bg-gray-800" style="width: 640px; height: 720px;">
+        <p class="w-60 h-1/2 text-6xl font-bold tracking-wider leading-10 text-white">Arike</p>
+        <p class="w-full h-1/2 text-lg tracking-wider leading-loose text-white">Lorem ipsum dolor sit amet, consectetur elit.</p>
+    </div>
+    <p class="w-96 absolute text-4xl tracking-wider leading-10 text-gray-600" style="left: 763px; top: 218px;">Authorized Login</p>
+    <div class="inline-flex items-center justify-start w-96 h-14 py-2.5 pl-6 pr-80 absolute bg-gray-100 rounded-2xl" style="left: 760px; top: 295px;">
+        <div class="inline-flex flex-col items-start justify-start py-1.5 rounded-2xl">
+            <p class="text-base tracking-wider leading-normal text-gray-500">Email</p>
+        </div>
+    </div>
+    <div class="inline-flex items-center justify-start w-96 h-14 py-2.5 pl-6 pr-72 absolute bg-gray-100 rounded-2xl" style="left: 760px; top: 361px;">
+        <div class="inline-flex flex-col items-start justify-start py-1.5 rounded-2xl">
+            <p class="text-base tracking-wider leading-normal text-gray-500">Password</p>
+        </div>
+    </div>
+    <div class="inline-flex items-center justify-center w-96 px-6 py-4 absolute bg-gray-800 rounded-xl" style="left: 763px; top: 446px;">
+        <p class="text-base font-semibold tracking-wider leading-normal text-center text-gray-50">Login</p>
+    </div>
+</div>
+
+{% endblock page %}
