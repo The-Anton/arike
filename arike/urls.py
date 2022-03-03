@@ -34,5 +34,9 @@ urlpatterns = [
     path("facility-detail/<pk>", GenericFacilityDetailView.as_view()),
     path("facility-delete/<pk>", GenericFacilityDeleteView.as_view()),
 
+    path("patient-create/", GenericPatientCreateView.as_view()),
+    path("patient-update/<pk>", GenericPatientUpdateView.as_view()),
+    path("patient-detail/<pk>", GenericPatientDetailView.as_view()),
+    path("patient-delete/<pk>", GenericPatientDeleteView.as_view()),
 
 ]
