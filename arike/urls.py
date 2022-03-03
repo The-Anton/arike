@@ -16,6 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.contrib import admin
+from django.contrib.auth.views import LogoutView
+from django.urls import path
+from dashboard.views import dashboard_view
+from facility.views import GenericFacilityCreateView, GenericFacilityUpdateView, GenericFacilityDetailView, GenericFacilityDeleteView
+from patients.views import GenericPatientCreateView, GenericPatientUpdateView, GenericPatientDetailView, GenericPatientDeleteView
+
+from users.views import login_view
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("dashboard/", dashboard_view),
+    path("login/", login_view),
+    path("facility-create/", GenericFacilityCreateView.as_view()),
+    path("facility-update/<pk>", GenericFacilityUpdateView.as_view()),
+    path("facility-detail/<pk>", GenericFacilityDetailView.as_view()),
+    path("facility-delete/<pk>", GenericFacilityDeleteView.as_view()),
+
+
 ]
