@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from patients.models import Patient
+from users.models import ArikeUser
 
 class Visit(models.Model):
     date = models.DateField()
@@ -25,5 +26,5 @@ class Note(models.Model):
     last_updated = models.DateTimeField()
     created_updated = models.DateTimeField()
     content = models.CharField(max_length=100)
-    given_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    given_by = models.ForeignKey(ArikeUser, on_delete=models.SET_NULL, null=True)
     visit = models.ForeignKey(Visit, on_delete=models.CASCADE)
