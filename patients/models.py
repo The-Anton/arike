@@ -11,7 +11,7 @@ class Patient(models.Model):
     department = models.CharField(max_length=100)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    birth_date = models.DateField()
+    birth_date = models.DateField(null=True)
     email = models.CharField(max_length=100)
     phone_number = models.IntegerField(max_length=10)
     emergency_phone_number = models.IntegerField(max_length=10)
@@ -23,7 +23,7 @@ class Patient(models.Model):
 class Family(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    birth_date = models.DateField()
+    birth_date = models.DateField(null=True)
     email = models.CharField(max_length=100)
     phone_number = models.IntegerField(max_length=10)
     address = models.CharField(max_length=200)
