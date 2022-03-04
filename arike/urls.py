@@ -33,6 +33,7 @@ from patients.views import (GenericDiseaseHistoryCreateView,
                             GenericTreatmentDeleteView,
                             GenericTreatmentDetailView,
                             GenericTreatmentUpdateView)
+from schedule.views import GenericScheduleListView
 from users.views import GenericUserCreateView, GenericUserDeleteView, GenericUserDetailView, GenericUserListView, GenericUserUpdateView, login_view
 
 urlpatterns = [
@@ -72,5 +73,7 @@ urlpatterns = [
     path("family-update/<pk>", GenericFamilyUpdateView.as_view()),
     path("family-detail/<pk>", GenericFamilyDetailView.as_view()),
     path("family-delete/<pk>", GenericFamilyDeleteView.as_view()),
+
+    path("schedules/", GenericScheduleListView.as_view()),
 
 ]

@@ -7,9 +7,9 @@ class Visit(models.Model):
     date = models.DateField()
     duration = models.IntegerField()
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    nurse = models.ForeignKey(ArikeUser, on_delete=models.CASCADE, null=True)
 
-
-class Health_info(models.Model):
+class HealthInfo(models.Model):
     palliative_phase = models.CharField(max_length=100)
     blood_pressure = models.IntegerField()
     pulse = models.IntegerField()

@@ -1,0 +1,29 @@
+{% extends 'dashboard_base.html' %}
+
+    {% block heading %}
+    <p>Schedule</p>
+    <div class="inline-flex items-center justify-center w-24 px-5 py-2 bg-gray-800 rounded-lg">
+        <p class="text-xs font-semibold leading-snug text-center text-gray-50">New</p>
+    </div>
+    {% endblock heading %}
+
+
+{% block content %}
+
+<div class="grid grid-cols-4 gap-10">
+    {% for visit in visits %}
+        <div class="bg-white rounded-2xl p-4" style="width: 280px; height: 155px;">
+                <div class="flex justify-between">
+                    <p class="text-xl font-semibold tracking-wider leading-loose text-gray-800" style="left: 25px; top: 18px;">{{visit.patient.first_name}} {{visit.patient.last_name}}</p>
+                    <p class="text-base font-semibold tracking-wider leading-normal text-gray-600" style="left: 196px; top: 22px;">{{visit.patient.gender}}</p>
+                </div>
+                
+                {% for treatment in treatments %}
+                    <li class="w-56 absolute text-xs font-semibold leading-snug text-gray-500" style="left: 16px; top: 54px;">{{treatment.name}}</li>
+                {% endfor %}     
+        </div>
+    {% endfor %}
+
+</div>
+
+{% endblock content %}
