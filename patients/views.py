@@ -2,12 +2,18 @@ from django.shortcuts import render
 from dataclasses import field
 from django.shortcuts import render
 from patients.forms import DiseaseHistoryCreateForm, DiseaseHistoryUpdateForm, FamilyCreateForm, FamilyUpdateForm, PatientCreateForm, PatientUpdateForm, TreatmentCreateForm, TreatmentUpdateForm
+from django.views.generic.list import ListView
 
 from patients.models import DiseaseHistory, Family, Patient, Treatment
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 
 # Patient View
+class GenericPatientListView(ListView):
+    model = Patient
+    context_object_name = 'patients'
+    qureyset = Patient.objects.all()
+    template_name = 'patient/patient_list.html' 
 class GenericPatientCreateView(CreateView):
     form_class = PatientCreateForm
     template_name = 'patient/patient_create.html'

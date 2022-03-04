@@ -1,0 +1,33 @@
+{% extends 'dashboard_base.html' %}
+
+    {% block heading %}
+    <p>Patient</p>
+    <div class="inline-flex items-center justify-center w-24 px-5 py-2 bg-gray-800 rounded-lg">
+        <p class="text-xs font-semibold leading-snug text-center text-gray-50">New</p>
+    </div>
+    {% endblock heading %}
+
+
+{% block content %}
+
+<div class="grid grid-cols-4 gap-10">
+    {% for patient in patients %}
+    <div class="w-72 h-44">
+        <div class="flex flex-col justify-between col-span-1 h-full p-4 bg-white rounded-2xl" >
+                <div>
+                    <p class="text-xl font-semibold tracking-wider leading-loose text-gray-800">{{patient.first_name}} {{patient.last_name}}</p>
+                    <p class="w-full text-base tracking-wider leading-normal text-gray-600">{{patient.address}}</p>
+                </div>
+                
+                
+                <div>
+                    <p class="w-1/2 text-base font-semibold tracking-wider leading-normal text-gray-600">30 Years Old</p>
+                    <p class="w-36 text-base font-semibold tracking-wider leading-normal text-blue-500">{{patient.phone_number}}</p>
+                </div>        
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock content %}
