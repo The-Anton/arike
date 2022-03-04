@@ -2,11 +2,32 @@
 
 {% block content %}
 
-<h1>Facility Create</h1>
+{% block heading %}
+Create Facility 
+{% endblock heading %}
 
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Save">
+
+    <div class="grid grid-cols-2">
+
+        <div class="col-span-1 inline-flex items-center justify-start w-72 h-14 pl-6 pr-44 bg-white rounded-2xl">
+            <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+                <p class="text-xs font-medium leading-snug text-gray-500">{{form.name.label}}</p>
+                {{form.name}}
+            </div>
+        </div>
+
+        <div class="col-span-1 inline-flex items-center justify-start w-72 h-14 pl-6 pr-44 bg-white rounded-2xl">
+            <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+                <p class="text-xs font-medium leading-snug text-gray-500">{{form.name.label}}</p>
+                {{form.name}}
+            </div>
+        </div>
+
+    </div>
+    
 </form>
 
 {% endblock content %}

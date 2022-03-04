@@ -103,11 +103,19 @@
 -->
 
 <div class="flex">
+  <div class="w-2/12 bg-white">
 
-  <div class="">
-    {% block content %}
-
-    {% endblock content %}
+  </div>
+  <div class="w-10/12 pl-64 pr-64 pt-16 pb-16">
+    <div class="text-5xl font-bold mb-8">
+      {% block heading %}
+      {% endblock heading %}
+    </div>
+    
+    <div class="">
+      {% block content %}
+      {% endblock content %}
+    </div>
   </div>
 </div>
 
