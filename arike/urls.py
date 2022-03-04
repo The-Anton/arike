@@ -33,12 +33,19 @@ from patients.views import (GenericDiseaseHistoryCreateView,
                             GenericTreatmentDeleteView,
                             GenericTreatmentDetailView,
                             GenericTreatmentUpdateView)
-from users.views import login_view
+from users.views import GenericUserCreateView, GenericUserDeleteView, GenericUserDetailView, GenericUserListView, GenericUserUpdateView, login_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("dashboard/", dashboard_view),
     path("login/", login_view),
+
+    path("users/", GenericUserListView.as_view()),
+    path("user-create/", GenericUserCreateView.as_view()),
+    path("user-update/<pk>", GenericUserUpdateView.as_view()),
+    path("user-detail/<pk>", GenericUserDetailView.as_view()),
+    path("user-delete/<pk>", GenericUserDeleteView.as_view()),
+
     path("facility-create/", GenericFacilityCreateView.as_view()),
     path("facility-update/<pk>", GenericFacilityUpdateView.as_view()),
     path("facility-detail/<pk>", GenericFacilityDetailView.as_view()),
