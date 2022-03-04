@@ -1,0 +1,81 @@
+{% extends 'dashboard_base.html' %}
+
+    {% block heading %}
+    <p>Facility</p>
+    <div class="inline-flex items-center justify-center w-24 px-5 py-2 bg-gray-800 rounded-lg">
+        <p class="text-xs font-semibold leading-snug text-center text-gray-50">New</p>
+    </div>
+    {% endblock heading %}
+
+
+{% block content %}
+
+<div class="grid grid-cols-2 gap-10">
+    {% for facility in facilities %}
+
+    <div class="flex-col col-span-1 justify-between m-auto px-5 py-5 bg-white rounded-2xl" style="width: 436px; height: 246px;">
+        <div class="h-3/4">
+            <div class="flex justify-between">
+                <p class="text-xl font-semibold tracking-wider leading-loose text-gray-800">{{facility.name}}</p>
+                <div class="w-1/6 h-6 bg-gray-200 rounded-full">
+                    <p class="text-xs font-medium leading-snug text-gray-600 text-center p-1">{{facility.kind}}</p>
+                </div>
+            </div>
+            <p class="w-72 text-base tracking-wider leading-normal text-gray-600">{{facility.address}}</p>
+        </div>
+        
+        
+        <div>
+            <div class="border-2 border-gray-100" style="width: 398px; height: 1px;"></div>
+            <div class="flex justify-between p-2">
+                <p class="text-base font-semibold tracking-wider leading-normal my-auto">{{facility.phone_number}}</p>
+
+                <div class="inline-flex items-center justify-center w-24 px-5 py-2 border-2 rounded-lg border-gray-800">
+                    <p class="text-xs font-semibold leading-snug text-center text-gray-800">View</p>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock content %}
+
+<div class="bg-white rounded-2xl" style="width: 736px; height: 271px;"/>
+<p class="text-2xl font-bold tracking-wider leading-loose">Filters</p>
+<div class="w-44 h-14">
+    <div class="inline-flex flex-col space-y-96 items-start justify-end flex-1">
+        <div class="inline-flex items-center justify-start w-full h-14 pl-6 pr-28 py-4 bg-white border-2 rounded-2xl border-gray-900">
+            <p class="text-base tracking-wider leading-normal text-gray-900">Ward</p>
+        </div>
+        <img class="transform -rotate-90 w-6 h-6 rounded-lg" src="https://via.placeholder.com/24x24"/>
+    </div>
+</div>
+<div class="w-44 h-14">
+    <div class="inline-flex flex-col space-y-96 items-start justify-end flex-1">
+        <div class="inline-flex items-center justify-start w-full h-14 pl-6 pr-32 py-4 bg-white border-2 rounded-2xl border-gray-900">
+            <p class="text-base tracking-wider leading-normal text-gray-900">Kind</p>
+        </div>
+        <img class="transform -rotate-90 w-6 h-6 rounded-lg" src="https://via.placeholder.com/24x24"/>
+    </div>
+</div>
+<div class="inline-flex items-center justify-center w-24 px-6 py-4 bg-gray-800 rounded-xl">
+    <p class="text-base font-semibold tracking-wider leading-normal text-center text-gray-50">Apply</p>
+</div>
+</div>
+
+<div class="inline-flex flex-col items-start justify-end py-5 bg-white rounded-2xl" style="width: 436px; height: 246px;">
+    <p class="text-xl font-semibold tracking-wider leading-loose text-gray-800">St George Hospital</p>
+    <div class="w-1/6 h-6 bg-gray-200 rounded-full"/>
+    <p class="text-xs font-medium leading-snug text-gray-600">CHC</p>
+    <p class="w-72 text-base tracking-wider leading-normal text-gray-600">Aikaranad  Grama Panchayat, Ernakulam District</p>
+    <p class="text-base font-semibold tracking-wider leading-normal text-gray-600">PAZHAMTHOTTAM</p>
+    <div class="border-2 border-gray-100" style="width: 436px; height: 1px;"/>
+    <div class="inline-flex items-center justify-center w-1/5 px-5 py-2 border-2 rounded-lg border-gray-800">
+        <p class="text-xs font-semibold leading-snug text-center text-gray-800">View</p>
+    </div>
+    <p class="text-base font-semibold tracking-wider leading-normal">+919099999999</p>
+</div>

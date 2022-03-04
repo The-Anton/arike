@@ -19,7 +19,7 @@ from django.contrib.auth.views import LogoutView
 from django.urls import path
 from facility.views import (GenericFacilityCreateView,
                             GenericFacilityDeleteView,
-                            GenericFacilityDetailView,
+                            GenericFacilityDetailView, GenericFacilityListView,
                             GenericFacilityUpdateView)
 from patients.views import (GenericDiseaseHistoryCreateView,
                             GenericDiseaseHistoryDeleteView,
@@ -46,6 +46,7 @@ urlpatterns = [
     path("user-detail/<pk>", GenericUserDetailView.as_view()),
     path("user-delete/<pk>", GenericUserDeleteView.as_view()),
 
+    path("facility/", GenericFacilityListView.as_view()),
     path("facility-create/", GenericFacilityCreateView.as_view()),
     path("facility-update/<pk>", GenericFacilityUpdateView.as_view()),
     path("facility-detail/<pk>", GenericFacilityDetailView.as_view()),
