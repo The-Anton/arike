@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from users.models import ArikeUser
+
+admin.sites.site.register(ArikeUser)
