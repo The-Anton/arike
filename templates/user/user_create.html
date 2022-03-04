@@ -1,0 +1,33 @@
+{% extends 'dashboard_base.html' %}
+
+{% block content %}
+
+{% block heading %}
+New User
+{% endblock heading %}
+
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+
+    <div class="grid grid-cols-2">
+
+        <div class="col-span-1 inline-flex items-center justify-start w-72 h-14 pl-6 pr-44 bg-white rounded-2xl">
+            <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+                <p class="text-xs font-medium leading-snug text-gray-500">{{form.name.label}}</p>
+                {{form.name}}
+            </div>
+        </div>
+
+        <div class="col-span-1 inline-flex items-center justify-start w-72 h-14 pl-6 pr-44 bg-white rounded-2xl">
+            <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+                <p class="text-xs font-medium leading-snug text-gray-500">{{form.name.label}}</p>
+                {{form.name}}
+            </div>
+        </div>
+
+    </div>
+    <button class="inline-flex items-center justify-center w-72 px-6 py-4 bg-gray-800 rounded-xl text-base font-semibold tracking-wider leading-normal text-center text-gray-50" action="submit">Next</button>
+</form>
+
+{% endblock content %}

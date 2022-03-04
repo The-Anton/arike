@@ -1,0 +1,22 @@
+{% extends 'dashboard_base.html' %}
+
+{% block content %}
+
+{% block heading %}
+Users 
+{% endblock heading %}
+
+{% for user in users %}
+<div class="flex">
+    <div class="w-2/12">
+        <div class="w-14 h-14 bg-gray-300 rounded-full"/>
+    </div>
+    <div class="w-10/12">
+        <h3>{{user.arikeuser.first_name}}</h3>
+        <p>{{user.arikeuser.department}}</p>
+    </div>
+    
+</div>
+{% endfor %}
+
+{% endblock content %}
