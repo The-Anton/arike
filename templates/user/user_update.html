@@ -1,13 +1,75 @@
 {% extends 'dashboard_base.html' %}
 
+{% block heading %}
+<p>Update {{user.first_name}} {{user.last_name}}</p>
+
+{% endblock heading %}
+
 {% block content %}
 
-<h1>Patient Update</h1>
-
-
 <form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
+
+<p class="text-2xl font-bold tracking-wider leading-loose text-gray-800">Profile</p>
+<div class="grid grid-cols-2 gap-10 m-auto">
+    <div class="col-span-1 inline-flex items-center justify-start w-72 h-14 pl-6 pr-44 bg-white rounded-2xl">
+        <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+            <p class="text-xs font-medium leading-snug text-gray-500">First Name</p>
+            <p class="text-base tracking-wider leading-normal text-gray-900">{{form.first_name}}</p>
+        </div>
+    </div>
+    <div class="col-span-1 inline-flex items-center justify-start w-72 h-14 pl-6 pr-44 bg-white rounded-2xl">
+        <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+            <p class="text-xs font-medium leading-snug text-gray-500">Last Name</p>
+            <p class="text-base tracking-wider leading-normal text-gray-900">{{form.last_name}}</p>
+        </div>
+    </div>
+    <div class="inline-flex items-center justify-start w-72 h-14 pl-6 pr-28 bg-white rounded-2xl">
+        <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+            <p class="text-xs font-medium leading-snug text-gray-500">Email</p>
+            <p class="text-base tracking-wider leading-normal text-gray-900">{{form.email}}</p>
+        </div>
+    </div>
+    <div class="inline-flex items-center justify-start w-72 h-14 pl-6 pr-40 bg-white rounded-2xl">
+        <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+            <p class="text-xs font-medium leading-snug text-gray-500">Birth date</p>
+            <p class="text-base tracking-wider leading-normal text-gray-900">{{form.birth_date}}</p>
+        </div>
+    </div>
+</div>
+
+<br>
+<p class="text-2xl font-bold tracking-wider leading-loose text-gray-800">Facilities</p>
+
+<div class="w-72 h-24">
+    <div class="inline-flex flex-col items-center justify-end flex-1 h-full pl-4 pr-2 pt-3.5 pb-5 bg-gray-200 border-2 rounded-2xl border-gray-600">
+        <p class="w-60 text-lg font-semibold tracking-wider leading-loose text-gray-800">Assigned facility</p>
+        <p class="w-full text-lg font-semibold tracking-wider leading-loose text-gray-800">Govt Hospital, Delhi</p>
+    </div>
+</div>
+
+<br>
+<button class="inline-flex items-center justify-center w-36 px-5 py-2 bg-gray-800 rounded-lg">
+    <p class="text-xs font-semibold leading-snug text-center text-gray-50">Change</p>
+</button>
+<br>
+<br>
+
+
+<p class="text-2xl font-bold tracking-wider leading-loose text-gray-800">Role</p>
+
+<div class="inline-flex flex-col space-y-96 items-end justify-end ">
+    <div class="inline-flex items-center justify-start flex-1 py-4 pl-6 pr-36 bg-white rounded-2xl">
+        <p class="text-base tracking-wider leading-normal text-gray-900">{{form.role}}</p>
+    </div>
+</div>
+
+<br>
+<br>
+
+<button class="inline-flex items-center justify-center w-80 px-6 py-4 bg-gray-800 rounded-xl" type="save" action="submit">
+    <p class="text-base font-semibold tracking-wider leading-normal text-center text-gray-50">Update</p>
+</button>
 </form>
+
 
 {% endblock content %}

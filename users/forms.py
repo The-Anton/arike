@@ -30,4 +30,4 @@ class UserCreateForm(UserCreationForm):
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = ArikeUser
-        fields = ["first_name", "last_name", "email",]
+        fields = ["first_name", "last_name", "email", "department", "birth_date", "role"]
