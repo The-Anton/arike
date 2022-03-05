@@ -1,7 +1,63 @@
 {% extends 'dashboard_base.html' %}
 
+
+{% block heading %}
+<p>{{facility.name}}</p>
+<div>
+    <a class="inline-flex items-center justify-center w-24 px-5 py-2 border-2 rounded-lg border-gray-800" href="/facility-delete/{{user.id}}">
+        <p class="text-xs font-semibold leading-snug text-center text-gray-800">Delete</p>
+    </a>
+    
+    <a class="inline-flex items-center justify-center w-24 px-5 py-2 bg-gray-800 rounded-lg" href="/facility-update/{{user.id}}">
+        <p class="text-xs font-semibold leading-snug text-center text-gray-50">Edit</p>
+    </a>
+</div>
+
+{% endblock heading %}
+
+
+
 {% block content %}
+<p class="text-2xl font-bold tracking-wider leading-loose text-gray-800">{{facility.kind}}</p>
 
-<h1>Facility Details</h1>
+<div class="inline-flex items-center justify-start pl-6 pr-80 bg-white rounded-2xl" style="width: 522px; height: 56px;">
+    <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+        <p class="text-xs font-medium leading-snug text-gray-500">Name</p>
+        <p class="text-base tracking-wider leading-normal text-gray-900">{{facility.name}}</p>
+    </div>
+</div>
+<br>
+<br>
 
+<div class="inline-flex items-start justify-start p-5 bg-white rounded-2xl" style="width: 522px; height: 118px;">
+    <div class="inline-flex flex-col space-y-2 items-start justify-start rounded-2xl" style="width: 482px; height: 54px;">
+        <p class="text-xs font-semibold leading-snug text-gray-500" style="width: 482px;">Address</p>
+        <p class="text-base tracking-wider leading-normal text-gray-900" style="width: 482px;">{{facility.address}}</p>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="inline-flex items-center justify-start pl-6 pr-96 bg-white rounded-2xl" style="width: 520px; height: 56px;">
+    <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+        <p class="text-xs font-medium leading-snug text-gray-500">Ward</p>
+        <p class="text-base tracking-wider leading-normal text-gray-900">{{facility.ward.name}}</p>
+    </div>
+</div>
+<br>
+<br>
+<div class="inline-flex items-center justify-start w-64 h-14 pl-6 pr-44 bg-white rounded-2xl">
+    <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+        <p class="text-xs font-medium leading-snug text-gray-500">Pin code</p>
+        <p class="text-base tracking-wider leading-normal text-gray-900">{{facility.pin_code}}</p>
+    </div>
+</div>
+
+<div class="inline-flex items-center justify-start w-64 h-14 pl-6 pr-32 bg-white rounded-2xl">
+    <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+        <p class="text-xs font-medium leading-snug text-gray-500">Phone number</p>
+        <p class="text-base tracking-wider leading-normal text-gray-900">{{facility.phone_number}}</p>
+    </div>
+</div>
+<br>
 {% endblock content %}
