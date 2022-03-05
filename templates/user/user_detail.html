@@ -1,7 +1,70 @@
 {% extends 'dashboard_base.html' %}
 
+
+{% block heading %}
+<p>{{user.first_name}} {{user.last_name}}</p>
+<div>
+    <a class="inline-flex items-center justify-center w-24 px-5 py-2 border-2 rounded-lg border-gray-800" href="/user-delete/{{user.id}}">
+        <p class="text-xs font-semibold leading-snug text-center text-gray-800">Delete</p>
+    </a>
+    
+    <a class="inline-flex items-center justify-center w-24 px-5 py-2 bg-gray-800 rounded-lg" href="/user-update/{{user.id}}">
+        <p class="text-xs font-semibold leading-snug text-center text-gray-50">Edit</p>
+    </a>
+</div>
+
+{% endblock heading %}
+
+
+
 {% block content %}
 
-<h1>Facility Details</h1>
+<p class="text-2xl font-bold tracking-wider leading-loose text-gray-800">Profile</p>
+<div class="grid grid-cols-2 gap-10 m-auto">
+    <div class="col-span-1 inline-flex items-center justify-start w-72 h-14 pl-6 pr-44 bg-white rounded-2xl">
+        <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+            <p class="text-xs font-medium leading-snug text-gray-500">First Name</p>
+            <p class="text-base tracking-wider leading-normal text-gray-900">{{user.first_name}}</p>
+        </div>
+    </div>
+    <div class="col-span-1 inline-flex items-center justify-start w-72 h-14 pl-6 pr-44 bg-white rounded-2xl">
+        <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+            <p class="text-xs font-medium leading-snug text-gray-500">Last Name</p>
+            <p class="text-base tracking-wider leading-normal text-gray-900">{{user.last_name}}</p>
+        </div>
+    </div>
+    <div class="inline-flex items-center justify-start w-72 h-14 pl-6 pr-28 bg-white rounded-2xl">
+        <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+            <p class="text-xs font-medium leading-snug text-gray-500">Email</p>
+            <p class="text-base tracking-wider leading-normal text-gray-900">{{user.email}}</p>
+        </div>
+    </div>
+    <div class="inline-flex items-center justify-start w-72 h-14 pl-6 pr-40 bg-white rounded-2xl">
+        <div class="inline-flex flex-col space-y-0.5 items-start justify-start py-1.5 rounded-2xl">
+            <p class="text-xs font-medium leading-snug text-gray-500">Birth date</p>
+            <p class="text-base tracking-wider leading-normal text-gray-900">{{user.birth_date | date:"D d M"}}</p>
+        </div>
+    </div>
+</div>
+
+<br>
+<p class="text-2xl font-bold tracking-wider leading-loose text-gray-800">Facilities</p>
+
+<div class="w-72 h-24">
+    <div class="inline-flex flex-col items-center justify-end flex-1 h-full pl-4 pr-2 pt-3.5 pb-5 bg-gray-200 border-2 rounded-2xl border-gray-600">
+        <p class="w-60 text-lg font-semibold tracking-wider leading-loose text-gray-800">Assigned facility</p>
+        <p class="w-full text-lg font-semibold tracking-wider leading-loose text-gray-800">Govt Hospital, Delhi</p>
+    </div>
+</div>
+
+<br>
+
+<p class="text-2xl font-bold tracking-wider leading-loose text-gray-800">Role</p>
+
+<div class="inline-flex flex-col space-y-96 items-end justify-end ">
+    <div class="inline-flex items-center justify-start flex-1 py-4 pl-6 pr-36 bg-white rounded-2xl">
+        <p class="text-base tracking-wider leading-normal text-gray-900">{{user.role}}</p>
+    </div>
+</div>
 
 {% endblock content %}
