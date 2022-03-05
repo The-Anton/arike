@@ -1,22 +1,30 @@
 {% extends 'dashboard_base.html' %}
 
-{% block content %}
 
 {% block heading %}
-Users 
+<p>Users</p>
+<div class="inline-flex items-center justify-center w-24 px-5 py-2 bg-gray-800 rounded-lg">
+    <p class="text-xs font-semibold leading-snug text-center text-gray-50">New</p>
+</div>
 {% endblock heading %}
 
-{% for user in users %}
-<div class="flex">
-    <div class="w-2/12">
-        <div class="w-14 h-14 bg-gray-300 rounded-full"/>
-    </div>
-    <div class="w-10/12">
-        <h3>{{user.arikeuser.first_name}}</h3>
-        <p>{{user.arikeuser.department}}</p>
-    </div>
-    
-</div>
-{% endfor %}
 
+
+{% block content %}
+
+
+
+<div class="grid grid-cols-2 gap-10">
+    {% for user in users %}
+    <a class="flex col-span-1 bg-white px-6 py-6 rounded-2xl" style="width: 436px; height: 138px;" href="/user-detail/{{user.id}}">
+        <div class="w-2/12 p-1">
+            <div class="w-14 h-14 bg-gray-300 rounded-full"></div>
+        </div>
+        <div class="w-10/12 px-4">
+            <p class="text-xl font-semibold tracking-wider leading-loose text-gray-800">{{user.first_name}}</p>
+            <p class="w-72 text-base tracking-wider leading-normal text-gray-600">{{user.department}}</p>
+        </div>  
+    </a>
+    {% endfor %}
+</div>
 {% endblock content %}
