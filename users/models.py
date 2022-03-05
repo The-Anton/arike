@@ -43,11 +43,11 @@ class ArikeUser(AbstractBaseUser, PermissionsMixin):
     is_verified = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
-    district = models.ForeignKey(District, on_delete= models.CASCADE)
-    facility = models.ForeignKey(Facility, on_delete= models.CASCADE)
+    district = models.ForeignKey(District, on_delete= models.CASCADE, null=True)
+    facility = models.ForeignKey(Facility, on_delete= models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now=True)
-    
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELD = ['first_name', 'email', 'role']
 
