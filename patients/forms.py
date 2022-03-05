@@ -7,13 +7,13 @@ from patients.models import DiseaseHistory, Family, Patient, Treatment
 class PatientCreateForm(forms.ModelForm):
     class Meta:
         model = Patient
-        fields = ["department","first_name", "last_name", "birth_date", "email", "phone_number", "emergency_phone_number", "gender"]
+        fields = ["address","first_name", "last_name", "birth_date", "email", "phone_number", "emergency_phone_number", "gender"]
 
 
 class PatientUpdateForm(forms.ModelForm):
     class Meta:
         model = Patient
-        fields = ["department","first_name", "last_name", "birth_date", "email", "phone_number", "emergency_phone_number", "gender"]
+        fields = ["address","first_name", "last_name", "birth_date", "email", "phone_number", "emergency_phone_number", "gender"]
 
 # Disease History Form
 class DiseaseHistoryCreateForm(forms.ModelForm):

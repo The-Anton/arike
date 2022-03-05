@@ -1,7 +1,75 @@
 {% extends 'dashboard_base.html' %}
 
+    {% block heading %}
+    <p>Family Details</p>
+    <div class="inline-flex items-center justify-center w-24 px-5 py-2 bg-gray-800 rounded-lg" href="/family-create/">
+        <p class="text-xs font-semibold leading-snug text-center text-gray-50">Add</p>
+    </div>
+    {% endblock heading %}
+
+
 {% block content %}
 
-<h1>Family Details</h1>
+<div class="grid grid-cols-2 gap-10">
+    {% for family in famalies %}
+    <div class="relative bg-white rounded-2xl" style="width: 430px; height: 366px;">
+        <div>
+            <p class="absolute text-xl font-semibold tracking-wider leading-loose text-gray-800" style="left: 19px; top: 17px;">Jacquelyne Stiedemann</p>
+
+        </div>
+        <div>
+            <p class="absolute text-base font-semibold tracking-wider leading-normal text-gray-600" style="left: 338px; top: 21px;">Sister</p>
+
+        </div>
+
+        <div>
+            <p class="w-56 absolute text-base tracking-wider leading-normal text-gray-600" style="left: 19px; top: 63px;">South Apt, East block, west city North 18090</p>
+
+        </div>
+
+        <div>
+            <p class="w-36 absolute text-base font-semibold tracking-wider leading-normal text-blue-500" style="left: 19px; top: 119px;">+91-9936963699</p>
+
+        </div>
+
+        <div>
+            <p class="w-48 absolute text-base font-semibold tracking-wider leading-normal text-blue-500" style="left: 232px; top: 119px;">email@test.com</p>
+        </div>
+
+        <div>
+            <p class="w-44 absolute text-base font-semibold tracking-wider leading-normal text-gray-600" style="left: 19px; top: 157px;">Birth date</p>
+            <p class="w-44 absolute text-base tracking-wider leading-normal text-gray-800" style="left: 19px; top: 182px;">10 Jan 1991 (30 Years)</p>
+
+        </div>
+
+        <div>
+            <p class="w-44 absolute text-base font-semibold tracking-wider leading-normal text-gray-600" style="left: 232px; top: 157px;">Occupation</p>
+            <p class="w-44 absolute text-base tracking-wider leading-normal text-gray-800" style="left: 232px; top: 182px;">Homemaker</p>
+
+        </div>
+        <div>
+            <p class="w-44 absolute text-base font-semibold tracking-wider leading-normal text-gray-600" style="left: 19px; top: 221px;">Education</p>
+            <p class="w-44 absolute text-base tracking-wider leading-normal text-gray-800" style="left: 19px; top: 246px;">Post Graduate</p>
+        </div>
+
+        <div>
+            <p class="w-44 absolute text-base font-semibold tracking-wider leading-normal text-gray-600" style="left: 232px; top: 221px;">Remark</p>
+            <p class="w-44 absolute text-base tracking-wider leading-normal text-gray-800" style="left: 232px; top: 246px;">
+                Gala Langosh IV</p>
+        </div>
+        <div class="inline-flex items-center justify-center w-24 px-5 py-2 absolute bg-gray-800 rounded-lg" style="left: 119px; top: 291px;">
+            <p class="text-xs font-semibold leading-snug text-center text-gray-50">Edit</p>
+        </div>
+        <div class="inline-flex items-center justify-center w-24 px-5 py-2 absolute border-2 rounded-lg border-gray-800" style="left: 19px; top: 291px;">
+            <p class="text-xs font-semibold leading-snug text-center text-gray-800">Delete</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
 
 {% endblock content %}
+
+
+<p class="w-40 text-2xl font-bold tracking-wider leading-loose text-gray-800">Sam Dow</p>
+<p class="w-96 text-lg tracking-wider leading-loose text-gray-600">South Apt, East block, west city North 18090</p>

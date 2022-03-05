@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+
+from facility.models import District, Facility
 ROLES = (("PRIMARY NURSE", "PRIMARY NURSE"), 
         ("SECONDARY NURSE", "SECONDARY NURSE"), 
         ("ADMIN", "ADMIN"))
@@ -29,6 +31,8 @@ class CustomAccountManager(BaseUserManager):
                 user.set_password(password)
                 user.save()
                 return user
+
+
 class ArikeUser(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -39,6 +43,8 @@ class ArikeUser(AbstractBaseUser, PermissionsMixin):
     is_verified = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
+    district = models.ForeignKey(District, on_delete= models.CASCADE)
+    facility = models.ForeignKey(Facility, on_delete= models.CASCADE)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELD = ['first_name', 'email', 'role']

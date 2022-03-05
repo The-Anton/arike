@@ -12,7 +12,7 @@
 
 <div class="grid grid-cols-4 gap-10">
     {% for patient in patients %}
-    <div class="w-72 h-44">
+    <a class="w-72 h-44" href="/patient-detail/{{patient.id}}">
         <div class="flex flex-col justify-between col-span-1 h-full p-4 bg-white rounded-2xl" >
                 <div>
                     <p class="text-xl font-semibold tracking-wider leading-loose text-gray-800">{{patient.first_name}} {{patient.last_name}}</p>
@@ -25,7 +25,7 @@
                     <p class="w-36 text-base font-semibold tracking-wider leading-normal text-blue-500">{{patient.phone_number}}</p>
                 </div>        
         </div>
-    </div>
+    </a>
     {% endfor %}
 
 </div>

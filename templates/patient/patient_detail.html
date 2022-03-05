@@ -1,7 +1,76 @@
 {% extends 'dashboard_base.html' %}
 
-{% block content %}
+    {% block heading %}
+    <p>{{patient.first_name}} {{patient.last_name}}</p>
+    <a class="inline-flex items-center justify-center w-24 px-5 py-2 bg-gray-800 rounded-lg" href="/patient-update/{{patient.id}}">
+        <p class="text-xs font-semibold leading-snug text-center text-gray-50" >Edit</p>
+    </a>
+    {% endblock heading %}
 
-<h1>Patient Details</h1>
+
+{% block content %}
+<p class="w-80 text-2xl font-bold tracking-wider leading-loose text-gray-800">Personal Information</p>
+<br>
+
+    <div class="flex">
+        <div class="grid grid-cols-2 p-6 mr-6 mb-6 bg-white rounded-2xl" style="width: 592px; height: 312px;">
+                <div class="col-span-2 ">
+                    <p class="w-40 text-xl font-semibold tracking-wider leading-loose text-gray-800">Sam Dow</p>
+                    <p class="w-96 text-base tracking-wider leading-normal text-gray-600">South Apt, East block, west city North 18090</p>
+                </div>
+        
+                <div>
+                    <p class="w-52 text-base tracking-wider leading-normal text-gray-800">Male</p>
+                    <p class="w-44 text-base font-semibold tracking-wider leading-normal text-gray-600">Gender</p>
+                </div>
+        
+                <div>
+                    <p class="w-44 text-base font-semibold tracking-wider leading-normal text-gray-600">Last Visit</p>
+                    <p class="w-52 text-base tracking-wider leading-normal text-gray-800">1 March 2021 @ 1pm</p>
+                </div>
+        
+                <div>
+                    <p class="w-44 text-base font-semibold tracking-wider leading-normal text-gray-600">Next Visit</p>
+                    <p class="w-52 text-base tracking-wider leading-normal text-gray-800">10 March 2021 @ 2pm</p>
+                </div>
+        
+                <div>
+                    <p class="w-44 text-base font-semibold tracking-wider leading-normal text-gray-600">Phone Number</p>
+                    <p class="w-52 text-base tracking-wider leading-normal text-blue-500">+91-9936963699</p>
+                </div>
+                
+                <div>
+                    <p class="w-56 text-base font-semibold tracking-wider leading-normal text-gray-600">Emergency Phone Number</p>
+                    <p class="w-52 text-base tracking-wider leading-normal text-blue-500">+91-9936963699</p> 
+                </div>
+        
+                <div>
+                    <p class="w-44 text-base font-semibold tracking-wider leading-normal text-gray-600">Facility</p>
+                    <p class="w-52 text-base tracking-wider leading-normal text-gray-800">Govt. Hospital, Delhi</p>            
+                </div>
+        </div>
+
+        <div class="flex-col">
+            <div class="w-72 h-36 p-6 mb-6 bg-white rounded-2xl">
+                <p class="text-2xl font-bold tracking-wider leading-loose">Visits</p>
+             </div>
+             <div class="w-72 h-36 p-6 m-auto bg-white rounded-2xl">
+                 <p class="text-2xl font-bold tracking-wider leading-loose">Treatments</p>
+             </div>
+        </div>
+    </div>
+
+    <div class="flex ">
+        <a class="w-72 h-36 p-6 mr-6 bg-white rounded-2xl" href="/family-detail/{{patient.id}}">
+            <p class="text-2xl font-bold tracking-wider leading-loose text-gray-800" >Family Details</p>
+        </a>
+        <div class="w-72 h-36 p-6 bg-white rounded-2xl">
+            <p class="text-2xl font-bold tracking-wider leading-loose text-gray-800">Disease History</p>
+        </div>
+    </div>
+    
+</div>
 
 {% endblock content %}
+
+

@@ -4,11 +4,11 @@
 {% block heading %}
 <p>{{facility.name}}</p>
 <div>
-    <a class="inline-flex items-center justify-center w-24 px-5 py-2 border-2 rounded-lg border-gray-800" href="/facility-delete/{{user.id}}">
+    <a class="inline-flex items-center justify-center w-24 px-5 py-2 border-2 rounded-lg border-gray-800" href="/facility-delete/{{facility.id}}">
         <p class="text-xs font-semibold leading-snug text-center text-gray-800">Delete</p>
     </a>
     
-    <a class="inline-flex items-center justify-center w-24 px-5 py-2 bg-gray-800 rounded-lg" href="/facility-update/{{user.id}}">
+    <a class="inline-flex items-center justify-center w-24 px-5 py-2 bg-gray-800 rounded-lg" href="/facility-update/{{facility.id}}">
         <p class="text-xs font-semibold leading-snug text-center text-gray-50">Edit</p>
     </a>
 </div>
