@@ -1,8 +1,26 @@
 {% extends 'dashboard_base.html' %}
 
+{% block heading %}
+<p>Delete {{user.first_name}} {{user.last_name}}</p>
+
+{% endblock heading %}
+
 {% block content %}
 
-<h1>Facility Delete</h1>
+<form method="post">{% csrf_token %}
+    <p class="text-2xl tracking-wider leading-loose text-gray-800" style="width: 564px;">User {{user.first_name}} {{user.last_name}} will be deleted.<br/>Are you sure ? Action can not be reversed.</p>
+    
+    <div class="my-4">
+        <button class="inline-flex items-center justify-center w-44 px-6 py-4 mr-4 bg-gray-800 rounded-xl">
+            <p class="text-base font-semibold tracking-wider leading-normal text-center text-gray-50">Delete</p>
+        </button>
+        <button class="inline-flex items-center justify-center w-44 px-6 py-4 border-2 rounded-xl border-gray-800">
+            <p class="text-base font-semibold tracking-wider leading-normal text-center text-gray-800">Cancel</p>
+        </button>
+    </div>
+    
+
+</form>
 
 
 {% endblock content %}
