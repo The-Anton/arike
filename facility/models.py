@@ -34,6 +34,7 @@ class Ward(models.Model):
         name = models.CharField(max_length=100)
         number = models.IntegerField()
         lsg_body = models.ForeignKey(LSG, on_delete=models.CASCADE)
+        
 class Facility(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=200)
@@ -41,5 +42,6 @@ class Facility(models.Model):
     phone_number = models.IntegerField(max_length=10)
     kind = models.CharField(max_length=100, default="PHC", choices=KIND)
     ward = models.ForeignKey(Ward, on_delete=models.CASCADE)
-
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
 

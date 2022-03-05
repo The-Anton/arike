@@ -40,7 +40,7 @@ class Patient(models.Model):
     phone_number = models.IntegerField(max_length=10)
     emergency_phone_number = models.IntegerField(max_length=10)
     gender = models.CharField(max_length=100, choices=GENDER)
-    ward = models.ForeignKey(Ward, on_delete=NULL)
+    ward = models.ForeignKey(Ward, on_delete=models.CASCADE)
     facility = models.ForeignKey(Facility, on_delete=models.CASCADE)
 
 
@@ -59,21 +59,31 @@ class Family(models.Model):
     occupation = models.CharField(max_length=50, null=True)
     is_primary = models.BooleanField(default=False)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
 class Disease(models.Model):
     name = models.CharField(max_length=100)
-    icds_code: models.CharField(max_length=100, choices=ICDS_CODE)
+    icds_code: models.CharField(max_length=100, choices=ICDS_CODE)    
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class PatientDisease(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    disease = models.ForeignKey(Disease, on_delete=models.CASCADE)
+    note = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
 class DiseaseHistory(models.Model):
     name = models.CharField(max_length=50)
-    # treatment = 
     remark = models.CharField(max_length=100)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
 class Treatment(models.Model):
-    # given_by =  
-    last_updated = models.DateField(default=datetime.now())
     discription = models.CharField(max_length=1000)
-    # care_type = models.CharField(max_length=100, choices=CARE_TYPE)
-    # care_sub_type = models.CharField(max_length=100, choices=CARE_SUB_TYPE)
+    care_type = models.CharField(max_length=100, choices=CARE_TYPE)
+    care_sub_type = models.CharField(max_length=100, choices=CARE_SUB_TYPE)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
